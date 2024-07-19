@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
+const localCatch = {
+
+}
+
 export const useFetch = ( url ) => {
 
 const [ state, setState] = useState({
@@ -26,6 +30,17 @@ const setLoadingAgain = ()=>{
 
 const getApi= async () => {
 
+    if (localCatch[url]){
+        setState({
+            data: localCatch[url],
+            isLoading:false,
+            hasError:false,
+            error:null,
+        })
+
+        return;
+    }
+
     setLoadingAgain()
 
     const respond= await fetch ( url );
@@ -51,6 +66,8 @@ const getApi= async () => {
             hasError:false,
             error:null,
         })
+
+    localCatch [url] = data
 }
 
 return{
