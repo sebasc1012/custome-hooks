@@ -29,6 +29,6 @@ const addParametros ={
 
 
 prueba = todoState(prueba, addParametros)
-console.log(prueba);
+
 
 export default todoState;

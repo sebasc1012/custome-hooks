@@ -12,11 +12,12 @@ import { MemoHook } from './06-Memos/MemoHook'
 import { CallbackHook } from './06-Memos/CallbackHook'
 import { Padre } from './07-tarea-memo/Padre'
 import todoState from './08-UseReduce/reducerTodo'
+import { TodoApp } from './08-UseReduce/TodoApp'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <Padre/>
+    <TodoApp/>
   // </React.StrictMode>
 )
